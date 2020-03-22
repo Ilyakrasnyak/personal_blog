@@ -1,10 +1,31 @@
-def example(e1, e2):
-    return e1 + 10 + e2
+MIN_A = 1
+MIN_B = 2
+MIN_C = 335
+
+MAX_A = 332
+MAX_B = 333
+MAX_C = 997
+
+a = MIN_A
+b = MIN_B
+c = MAX_C
 
 
-list_1 = [i for i in range(10)]
-list_2 = [i * 2 for i in range(2)]
-list_3 = [i / 2 for i in range(10)]
+def is_py_triplet(a, b, c):
+    if a ** 2 + b ** 2 == c ** 2:
+        return True
+    return False
 
-list_1 = dict(map(lambda *args: args, list_1, list_2))
-print(list_1)
+
+while True:
+    c = 1000 - a - b
+    print(a, b, c)
+    if is_py_triplet(a, b, c):
+        print('Win!')
+        break
+
+    a += 1
+
+    if a > MAX_A:
+        b += 1
+        a = MIN_A
